@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wunschliste</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    .wishlist {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wishlist">
+    <h1>🎁 Hannes seine Weinachstwünsche</h1>
+    <ul id="wishList"></ul>
+  </div>
+
+  <script>
+    // 💡 Hier kannst du deine Wünsche ändern oder neue hinzufügen:
+    const wuensche = [
+      { name: "3D Drucker", url: "https://eu.store.bambulab.com/de/products/a1-mini?srsltid=AfmBOor3OQ7QLbgniz7nm_r7On42-YPZEThelSsUqRiBM5SaaWDQqr7k" },
+      { name: "Geld", url: "https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?hl=en" },
+      
+    ];
+
+    // 🔧 Hier wird die Liste auf der Seite angezeigt
+    const list = document.getElementById("wishList");
+
+    wuensche.forEach(wunsch => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = wunsch.url;
+      a.textContent = wunsch.name;
+      a.target = "_blank"; 
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>
